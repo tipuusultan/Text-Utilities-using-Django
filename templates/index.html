@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>Text Utilities</title>
+</head>
+
+<body>
+
+  <center>
+
+    <h1><a href="/" style="text-decoration:none;">Text Utilities</a></h1>
+
+    {% if word_count and charecter_count %}
+
+    <div class="alert alert-primary" role="alert">
+      Number of word is {{word_count}}<br>
+      Number of charecter is {{charecter_count}}
+    </div>
+
+  {% endif %}
+
+
+    <form name="form1" action="/remove" method="get">
+
+      {% csrf_token %}
+
+      <textarea style="height:400px" class="form-control container" id="exampleFormControlTextarea1" rows="3" name="text">{{result}}</textarea><br>
+      <input name="remove_punk" type="checkbox"> Remove Punctuations <br>
+      <input name="uppercase" type="checkbox"> Convert Uppercase<br>
+      <input name="lowercase" type="checkbox"> Convert Lowercase<br>
+      <input name="newline" type="checkbox"> New Line Remove<br>
+      <input name="extraspace" type="checkbox"> Extra Space Remover<br>
+      <input name="capitalize" type="checkbox"> Capitalize<br>
+      <button class="btn btn-primary my-2">Submite</button>
+
+    </form>
+
+  </center>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
